@@ -1,0 +1,33 @@
+Sure! Here are some basic JavaScript interview questions that could be suitable for someone with 3 years of experience:
+
+1. Explain the difference between `null` and `undefined` in JavaScript.
+
+2. What are the different data types in JavaScript? Give examples of each.
+
+3. How do you declare variables in JavaScript? What are the differences between `var`, `let`, and `const`?
+
+4. Describe the concept of closures in JavaScript and provide an example.
+
+5. What is the "this" keyword in JavaScript? How does its value get determined?
+
+6. How do you handle asynchronous operations in JavaScript? Explain callbacks and how they work.
+
+7. What are Promises in JavaScript? How do they help with asynchronous code?
+
+8. How does inheritance work in JavaScript? Explain prototype-based inheritance.
+
+9. What is the Event Loop in JavaScript? How does it enable non-blocking behavior in JavaScript?
+
+10. How can you avoid callback hell in asynchronous JavaScript code?
+
+11. Explain the difference between `==` and `===` in JavaScript.
+
+12. What is hoisting in JavaScript?
+
+13. How can you clone an object in JavaScript?
+
+14. Explain the concept of function hoisting.
+
+15. What is the purpose of the `bind()` method in JavaScript?
+
+Remember that the actual difficulty level of these questions can vary based on the interviewer's expectations and the specific job requirements. Additionally, it's essential to understand not only the theoretical aspects of these topics but also have practical hands-on experience in JavaScript development. Good luck with your interview preparation!

@@ -1,0 +1,11 @@
+{
+  "name": "Core-JavaScript",
+  "version": "1.1.0",
+  "description": "core javascript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "siddhartha",
+  "license": "ISC"
+}

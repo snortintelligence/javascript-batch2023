@@ -1,0 +1,12 @@
+let x = 21;
+let y = 2;
+let sum = x + y;
+console.log("sum x + y = ",sum);
+let sub = x - y;
+console.log("sub x + y = ",sub);
+let mul = x * y;
+console.log("mul x * y = ",mul);
+let div = x / y;
+console.log("div x / y = ",div);
+let modulus = x % y;
+console.log("div x % y = ",modulus);
