@@ -1,0 +1,8 @@
+4 error keywords in javascript
+-----------------------------
+throw : the throw keyword is used to intentionally throwing an exception within your code. 
+try : the code which may throw an error / exception must be written inside try block
+catch : If an exception is thrown within the try block, the catch block is executed, and the error message is logged to the console.
+finally : The "finally" block is used to execute the necessary code of the program. It is executed whether an exception is handled or not.
+-----------------------------
+throws : not javascript
