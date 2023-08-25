@@ -1,0 +1,15 @@
+const fetchData = new Promise((resolve, reject) => {
+  // Simulate a failed asynchronous operation
+  setTimeout(() => {
+    const error = 'Failed to fetch data';
+    reject(error);  // Error: Reject the promise with an error message
+  }, 1000);
+});
+
+fetchData
+  .then(result => {
+    console.log('Fetched data:', result); // This won't be executed
+  })
+  .catch(error => {
+    console.error('Error:', error); // Handle the rejection error
+  });
