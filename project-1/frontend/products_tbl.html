@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>Store</h2>
+  <p>Product store :</p>
+  <table id="store" class="table" aria-label="pstore">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Table rows will be populated here using JavaScript -->
+    </tbody>
+  </table>
+</div>
+
+<script>
+  // Fetch product data from the API
+  fetch('http://localhost:5000/api/products')
+    .then((response) => response.json())
+    .then((data) => {
+      const tbody = document.getElementById('table-body'); // Get tbody element
+
+      // Iterate through the fetched product data and create table rows
+      data.forEach((product) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${product.id}</td>
+          <td>${product.title}</td>
+          <td>${product.price}</td>
+          <td>${product.description}</td>
+          <td>${product.category}</td>
+        `;
+
+        tbody.appendChild(row); // Append the row to the tbody
+      });
+    })
+    .catch((error) => console.log(error));
+</script>
+
+</body>
+</html>
