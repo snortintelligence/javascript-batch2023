@@ -1,0 +1,4 @@
+DELETE /api/v3/products/16 404 69 - 23.271 ms
+::1 - - [29/Sep/2023:17:11:45 +0000] "GET /api/v3/products/ HTTP/1.1" 200 127 "-" "PostmanRuntime/7.33.0"
+[29/Sep/2023:17:13:32 +0000] "GET /api/v3/products/" 200 127 - 40.995 ms
+[29/Sep/2023:17:17:47 +0000] "POST /api/v3/products/" 201 64 - 82.986 ms
