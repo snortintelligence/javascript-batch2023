@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+<body>
+    <!-- html body -->
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>DOM Example - 2</h1>
+    </main>
+    <footer>
+        This is footer text
+    </footer>
+    <script>
+        // console.log(document.body.childNodes[1].childNodes[1].childNodes[1]);
+        // console.log('Working on body {children} element selection');
+        // In demo 2 uses of document.body.children
+        // console.log(document.body.children);
+        // console.log('accessing ul element : ');
+        // Find parent and children nodes
+        console.log(document.body.firstElementChild.firstElementChild.firstElementChild);
+        console.log(document.body.lastElementChild);
+         // Find siblings node | just before and just after
+         console.log(document.body.children[1].nextElementSibling);
+         console.log(document.body.children[1].previousElementSibling);
+    </script>
+</body>
+</html>

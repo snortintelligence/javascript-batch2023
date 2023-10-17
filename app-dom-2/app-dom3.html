@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <!-- html body -->
+    <section class="searchbar">
+        search here:
+        <input type="text" name="searcText" value="wallnuts"/>
+    </section>
+    <header class="common" id="navbar">
+        <h1>This is Header text</h1>
+        <nav class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1>DOM Example - 3</h1>
+    </main>
+    <footer class="common">
+        <h1>This is footer text</h1>
+    </footer>
+
+    <script>
+        // Step1.   How to access element using #id, name, class
+        // console.log(document.getElementById('navbar'));
+        // console.log(document.getElementsByClassName('main')[0]);
+        // console.log(document.getElementsByName('searcText')[0].value);
+        // chanhing value
+        // console.log(document.getElementsByName('searcText')[0].value = 'Kesar');
+        // console.log(document.getElementsByTagName('footer')[0]);
+
+        //Step 2. querySelector: It is alternative for above all
+        console.log(document.querySelector('#navbar'));
+        console.log(document.querySelector('.main').textContent);
+        // chanhing value
+        console.log(document.querySelector('.main').textContent='DOM Manipulation Example - 3');
+        // To select an element by its name attribute
+        console.log(document.querySelector('[name=searcText]'));
+        console.log(document.querySelector('[name=searcText]').value='Badam');
+
+        // select all common props
+        console.log(document.querySelectorAll('.common'));
+        const nodes = document.querySelectorAll('.common');
+        const nodesElements = Array.from(nodes);
+        nodesElements.map((e)=>console.log(e+" : "+e.innerHTML));
+
+        //fetch list first element
+        const menuFirstItem = document.querySelectorAll('ul > li:first-child');
+        console.log(menuFirstItem[0].innerHTML);
+
+        const menuLastItem = document.querySelectorAll('ul > li:last-child');
+        console.log(menuLastItem[0].innerHTML);
+    </script>
+</body>
+
+</html>

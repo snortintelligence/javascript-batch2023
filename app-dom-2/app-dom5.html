@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <h1>DOM Example | create new element - 5</h1>
+    <div class="common">
+        <h1>This is div text 1</h1>
+    </div>
+
+    <footer>
+        <h1>This footer text</h1>
+    </footer>
+
+    <script>
+        const h1 = document.createElement("h1");
+        const text1 = document.createTextNode("Home");
+        const text2 = document.createTextNode("Products");
+        const text3 = document.createTextNode("About");
+        h1.append(text1);
+        h1.append(text2);
+        h1.prepend(text3);
+        console.log(h1);
+        console.log(h1.textContent);
+
+        // add some heading text after footer
+        const footer = document.getElementsByTagName('footer')[0];
+        console.log(footer.after(h1));
+
+
+    </script>
+</body>
+
+</html>

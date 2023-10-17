@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <!-- html body -->
+    <section class="searchbar">
+        search here:
+        <input type="text" name="searcText" value="wallnuts"/>
+    </section>
+    <header class="common" id="navbar" >
+        <h1>This is Menu text</h1>
+        <nav class="menu" style="background-color: rgb(68, 68, 131); color: white;">
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1 id="notes" style="padding: 40px ;background-color: #1c1e81; color: white;" data-list="menuNames: [Home,Products,About]">DOM Example | Attribute Value - 4</h1>
+    </main>
+    <footer class="common">
+        <h1>This is footer text</h1>
+    </footer>
+
+    <script>
+        let attributeValue = document.getElementById('notes').getAttribute('style');
+        console.log(attributeValue);
+        document.getElementById('notes').setAttribute('class','.abc');
+        console.log(document.getElementById('notes').getAttribute('class'));
+
+        document.getElementById('notes').setAttribute('data-text','welcome');
+        console.log(document.getElementById('notes').getAttribute('data-text'));
+        console.log(document.getElementById('notes').dataset);
+    </script>
+</body>
+
+</html>

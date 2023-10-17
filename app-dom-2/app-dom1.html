@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>This is main heading</h1>
+    </main>
+    <footer>
+        This is footer text
+    </footer>
+    <script>
+        // selecting body
+        // console.log('select body : ', document.body);
+        // selecting parentNode, parentElement and part of the body
+        console.log('select body parentNode : ', document.body.parentNode);
+        console.log('select body childNodes : ', document.body.childNodes);
+        console.log('select body firstChild : ', document.body.firstChild);
+        console.log('select body firstChild : ', document.body.lastChild);
+        // console.log('select body parentElement : ', document.body.parentElement);
+        // console.log('select body part : ', document.body.part);
+        // selecting ul
+        console.log(document.body.childNodes[1].childNodes[1].childNodes[1]);
+
+    </script>
+</body>
+</html>
