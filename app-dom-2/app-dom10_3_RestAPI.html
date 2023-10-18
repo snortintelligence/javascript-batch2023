@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>DOM - 10</title>
+</head>
+
+<style>
+    li:hover {
+        background-color: #ebffe1;
+        color: #363636;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <h1>API Data </h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Content for the first column -->
+                <h1>Users List</h1>
+                <button class="btn btn-success" id="showItems" onclick="showItems()">show users</button>
+                <header>
+                    <!-- adding a list of users dynamically -->
+                    <nav style="margin-top: 5px;">
+                        <ul id="productList">
+                            <li class="list-group-item" id="helptext">No more users</li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <div class="col-md-6">
+                <!-- Content for the second column -->
+                <div class="bg-secondary text-white p-3">
+                    <label for="selectedProduct">JSON Response</label>
+                    <textarea name="selectedProduct" id="selectedProduct" cols="80" rows="10">Empty selection</textarea>
+                    <!-- <nav style="margin-top: 5px;">
+                        <ul>
+                            <li id="selectedProduct" class="list-group-item">_</li>
+                        </ul>
+                    </nav> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Step 1. users list to display
+        let usersArray = [];
+
+        fetch('http://localhost:3000/users')
+            .then((response) => response.json())
+            .then((usersResponse) => {
+                console.log(usersResponse);
+                // usersArray = usersResponse.users;
+                // Ensure that usersResponse.users is an array
+                if (Array.isArray(usersResponse.users)) {
+                    // Store the latest 10 records
+                    usersArray = usersResponse.users.slice(-10);
+                }
+                console.log(usersArray);
+            }).catch(err => console.error('Something went wrong...', err))
+
+        const productList = document.getElementById('productList');
+
+        let usersListVisible = false;
+
+        // Step 2. create dynamic HMTL elements to display
+        const prepareList = (users) => {
+            document.getElementById('helptext').remove();
+            users.forEach((User, index) => {
+                const listItem = document.createElement('li');
+                listItem.setAttribute('value', User.username);
+                listItem.setAttribute('class', "list-group-item");
+                listItem.setAttribute('id', User.id);
+                listItem.textContent = User.username;
+                // listItem.onclick = () => selectUsers(User.username);
+                listItem.onclick = () => selectUsers(User);
+                productList.appendChild(listItem);
+            });
+        }
+
+
+        // Step 3. Create required functions for buttons
+        const selectUsers = (Users) => {
+            const selectedProduct = document.getElementById('selectedProduct');
+            console.log('You selected : ', Users);
+            console.log(selectedProduct);
+            // Replace the text content
+            // selectedProduct.textContent = JSON.stringify(Users); List
+            selectedProduct.value = JSON.stringify(Users, null, 2);
+        }
+
+        // Step 4. Create required functions for buttons
+        const showItems = () => {
+            if (!usersListVisible) {
+                const headerElement = document.querySelector("header");
+                const navElement = headerElement.querySelector("nav");
+                navElement.style.marginTop = '5px'; // Set the margin-top
+                headerElement.appendChild(navElement);
+                usersListVisible = true;
+                prepareList(usersArray);
+            }
+        }
+    </script>
+</body>
+
+</html>

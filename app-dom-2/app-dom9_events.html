@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 9</title>
+</head>
+
+<body>
+    <h1>DOM Example 9 | Event Handling( addEventListener| removeEventListener ) </h1>
+
+    <header>
+        <h1>Vegitable List</h1>
+        <nav>
+            <ul>
+                <li>Potato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <button id="btnOnline">Order Online</button>
+    <button id="btnOffline">Order Offline</button>
+
+    <script>
+        // Step 1. Create required functions for buttons
+        const orderOnline = () => {
+            alert('Sorry, online service unavailable now!');
+        }
+
+        const orderOffline = () => {
+            alert('Offline service is too late!');
+        }
+
+        // Step 2. Get button elements by id and apply event listeners
+        const btnOnline = document.getElementById('btnOnline');
+        const btnOffline = document.getElementById('btnOffline');
+
+        btnOnline.addEventListener('click', orderOnline);
+        btnOffline.addEventListener('click', orderOffline);
+    </script>
+
+</body>
+
+</html>

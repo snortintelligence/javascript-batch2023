@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 9</title>
+</head>
+
+<body>
+    <h1>DOM Example 10.2 | Event Handling( addEventListener| removeEventListener ) </h1>
+
+    <header>
+        <h1>Vegetable List</h1>
+        <!-- adding a list of vegetables dynamically -->
+        <nav>
+            <ul id="vegetableList">
+                <li id="helptext">No more vegetables</li>
+            </ul>
+        </nav>
+    </header>
+
+    <button id="showItems" onclick="showItems()">show vegetables</button>
+
+    <script>
+
+        // Step 1. vegetables list to display
+        const vegetables = ["carrot", "potato", "tomato", "radish", "chilli"];
+
+        const vegetableList = document.getElementById('vegetableList');
+
+        let vegetablesListVisible = false;
+
+        // Step 2. create dynamic HMTL elements to display
+        const prepareList = () => {
+            document.getElementById('helptext').remove();
+            vegetables.forEach((vegetable, index) => {
+                const listItem = document.createElement('li');
+                listItem.setAttribute('value', vegetable);
+                listItem.textContent = vegetable;
+                listItem.onclick = () => selectVegetable(vegetable);
+                vegetableList.appendChild(listItem);
+            });
+        }
+
+        // Step 3. Create required functions for buttons
+        const selectVegetable = (vegetable) => {
+            console.log('You selected : ', vegetable);
+        }
+
+        // Step 4. Create required functions for buttons
+        const showItems = () => {
+            if (!vegetablesListVisible) {
+                const headerElement = document.querySelector("header");
+                const navElement = headerElement.querySelector("nav");
+                headerElement.appendChild(navElement);
+                vegetablesListVisible = true;
+                prepareList();
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 9</title>
+</head>
+
+<body>
+    <h1>DOM Example 10 | Event Handling( addEventListener| removeEventListener ) </h1>
+    <header>
+        <h1>Vegetable List</h1>
+        <nav>
+            <ul>
+                <li id="potato" onclick="selectVegetable(event)" value="Potato">Potato</li>
+                <li id="tomato" onclick="selectVegetable(event)" value="Tomato">Tomato</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <script>
+        // Step 1. Create required functions for buttons
+        const selectVegetable = (event) => {
+            const target = event.target;
+            console.log(event);
+            console.log(target);
+            console.log(target.attributes);
+            console.log('value : ',target.value);
+            console.log(target.getAttribute('value')); // Log the value attribute
+        }
+
+        // Step 2. Get button elements by id and apply event listeners
+        const potato = document.getElementById('potato');
+        const tomato = document.getElementById('tomato');
+        
+    </script>
+
+</body>
+
+</html>

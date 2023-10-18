@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <h1>DOM Example | adding element as a HTML or Text - 7</h1>
+    <div class="common">
+        <h1>This is div text 1</h1>
+    </div>
+
+    <footer>
+        <h1>This footer text</h1>
+    </footer>
+
+    <script>
+
+        const navbar = `
+        <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>`;
+        const footerElement = document.body.querySelector('footer');
+        // footerElement.innerHTML = navbar;
+
+        //appending
+        // footerElement.innerHTML += navbar;
+        // footerElement.innerText += navbar;
+
+        // how to add before footer means outside the footer tag
+        // footerElement.insertAdjacentHTML('beforebegin', navbar);
+
+        // how to add after footer means inside the footer tag to next intermediate element
+        footerElement.insertAdjacentHTML('afterbegin', navbar);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+Certainly, here are some small examples of direct DOM changes using JavaScript:
+
+1. **Changing Text Content:**
+   You can change the text content of an HTML element like a `<p>` or `<span`.
+
+   ```html
+   <p id="demo">This is a paragraph.</p>
+   <button onclick="changeText()">Change Text</button>
+
+   <script>
+       function changeText() {
+           document.getElementById('demo').textContent = 'Text changed!';
+       }
+   </script>
+   ```
+
+2. **Changing Style Properties:**
+   You can change CSS styles of an element, like its color or background.
+
+   ```html
+   <div id="box" style="width: 100px; height: 100px; background-color: red;"></div>
+   <button onclick="changeStyle()">Change Style</button>
+
+   <script>
+       function changeStyle() {
+           const box = document.getElementById('box');
+           box.style.backgroundColor = 'blue';
+           box.style.width = '150px';
+           box.style.height = '150px';
+       }
+   </script>
+   ```
+
+3. **Adding and Removing Elements:**
+   You can add new elements or remove existing ones from the DOM.
+
+   ```html
+   <ul id="myList">
+       <li>Item 1</li>
+       <li>Item 2</li>
+   </ul>
+   <button onclick="addItem()">Add Item</button>
+   <button onclick="removeItem()">Remove Item</button>
+
+   <script>
+       function addItem() {
+           const newListElement = document.createElement('li');
+           newListElement.textContent = 'New Item';
+           document.getElementById('myList').appendChild(newListElement);
+       }
+
+       function removeItem() {
+           const list = document.getElementById('myList');
+           if (list.children.length > 0) {
+               list.removeChild(list.lastChild);
+           }
+       }
+   </script>
+   ```
+
+These examples demonstrate some common ways to make direct changes to the DOM using JavaScript. You can change text, style properties, and manipulate elements to create dynamic and interactive web pages.

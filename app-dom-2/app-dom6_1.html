@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <h1>DOM Example | adding and removing DOM elements - 6</h1>
+
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="common">
+        <h1>This is div text 1</h1>
+    </div>
+
+    <footer>
+        <h1>This footer text</h1>
+    </footer>
+
+    <script>
+
+        // 1st way : 
+        // adding and removing DOM elements
+        // const navElement = document.body.getElementsByTagName("nav")[0];
+        // navElement.remove();
+
+        // // Step 3: Re-insert the stored nav element at the same position
+        // document.body.appendChild(navElement);
+
+        // 2nd way : 
+        // Remove the nav element
+        const navElement = document.querySelector("header nav");
+        navElement.remove();
+
+        // Re-insert the removed nav element at the same position within the header
+        const headerElement = document.querySelector("header");
+        headerElement.appendChild(navElement);
+
+    </script>
+</body>
+
+</html>

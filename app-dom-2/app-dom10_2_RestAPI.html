@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 9</title>
+</head>
+
+<body>
+    <h1>DOM Example 10.2 | Event Handling( addEventListener| removeEventListener ) </h1>
+
+    <header>
+        <h1>Users List</h1>
+        <!-- adding a list of users dynamically -->
+        <nav>
+            <ul id="productList">
+                <li id="helptext">No more users</li>
+            </ul>
+        </nav>
+    </header>
+
+    <button id="showItems" onclick="showItems()">show users</button>
+
+    <script>
+
+        // Step 1. users list to display
+        let usersArray = [];
+
+        fetch('http://localhost:3000/users')
+            .then((response) => response.json())
+            .then((usersResponse) => {
+                console.log(usersResponse);
+                usersArray = usersResponse.users;
+            }).catch(err => console.error('Something went wrong...',err))
+
+        const productList = document.getElementById('productList');
+
+        let usersListVisible = false;
+
+        // Step 2. create dynamic HMTL elements to display
+        const prepareList = (users) => {
+            document.getElementById('helptext').remove();
+            users.forEach((User, index) => {
+                const listItem = document.createElement('li');
+                listItem.setAttribute('value', User.username);
+                listItem.setAttribute('id', User.id);
+                listItem.textContent = User.username;
+                // listItem.onclick = () => selectUsers(User.username);
+                listItem.onclick = () => selectUsers(User);
+                productList.appendChild(listItem);
+            });
+        }
+
+        // Step 3. Create required functions for buttons
+        const selectUsers = (Users) => {
+            console.log('You selected : ', Users);
+        }
+
+        // Step 4. Create required functions for buttons
+        const showItems = () => {
+            if (!usersListVisible) {
+                const headerElement = document.querySelector("header");
+                const navElement = headerElement.querySelector("nav");
+                headerElement.appendChild(navElement);
+                usersListVisible = true;
+                prepareList(usersArray);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

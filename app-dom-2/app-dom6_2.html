@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<style>
+    .active {
+        font-weight: 600;
+    }
+
+    .active_color {
+        color: orangered;
+    }
+
+    .li_bg{
+        background-color: rgb(255, 248, 187);
+    }
+
+</style>
+
+<body>
+    <h3>DOM Example | remove or add css classes - 6</h3>
+
+    <header id="nav">
+        <nav class="common">
+            <ul>
+                <li class="active active_color">Home</li>
+                <li>Products</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="common">
+        <h1>This is div text 1</h1>
+    </div>
+
+    <footer>
+        <h1>This footer text</h1>
+    </footer>
+
+    <script>
+        const litsItems = document.body.getElementsByTagName("li");
+        // remove 
+        console.log(litsItems[0].classList);
+        // Check if there are any li elements in the list
+        if (litsItems.length > 0) {
+            // Remove the 'active' and 'active_color' classes from the first li element
+            console.log('removing classes...');
+            litsItems[0].classList.remove('active');
+            // litsItems[0].classList.remove('active', 'active_color');
+        }
+        // Log the updated class list of the first li element
+        console.log(litsItems[0].classList);
+
+        litsItems[0].classList.add('li_bg');
+
+        // If the 'active' class is present, it will be removed; if it's not present, it will be added. 
+        //Essentially, it alternates the class's presence each time it is executed.
+        litsItems[0].classList.toggle('active');
+        litsItems[0].classList.toggle('active');
+
+    </script>
+</body>
+
+</html>

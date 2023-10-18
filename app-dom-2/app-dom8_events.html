@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <h1>DOM Example 8 | Event Handling </h1>
+
+    <header>
+        <h1>Vegitable List</h1>
+        <nav>
+            <ul>
+                <li>Potato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <button onclick="orderOnline()">Order Online</button>
+    <button onclick="orderOffline()">Order Offline</button>
+
+    <script>
+        const orderOnline = () => {
+            alert('Sorry,online service unavilable now!');
+        }
+        const orderOffline = () => {
+            alert('offline service is too late!');
+        }
+    </script>
+</body>
+
+</html>
