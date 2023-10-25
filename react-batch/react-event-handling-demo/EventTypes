@@ -1,0 +1,64 @@
+JavaScript provides a wide range of events that you can work with to make your web applications interactive and responsive. 
+These events can be categorized into different types:
+
+1. **Mouse Events**:
+   - `click`: Occurs when the mouse is clicked.
+   - `dblclick`: Occurs when the mouse is double-clicked.
+   - `mousedown`: Occurs when the mouse button is pressed down.
+   - `mouseup`: Occurs when the mouse button is released.
+   - `mousemove`: Occurs when the mouse pointer moves.
+   - `mouseover`: Occurs when the mouse pointer enters an element.
+   - `mouseout`: Occurs when the mouse pointer leaves an element.
+   - `mouseenter` and `mouseleave`: Similar to `mouseover` and `mouseout`, but do not bubble.
+
+2. **Keyboard Events**:
+   - `keydown`: Occurs when a key is pressed down.
+   - `keyup`: Occurs when a key is released.
+   - `keypress`: Occurs when a key is pressed (not used for all keys).
+
+3. **Form Events**:
+   - `submit`: Occurs when a form is submitted.
+   - `reset`: Occurs when a form is reset.
+   - `change`: Occurs when the value of an input element changes.
+   - `input`: Occurs when the value of an input, textarea, or contenteditable element changes.
+   - `focus`: Occurs when an element receives focus.
+   - `blur`: Occurs when an element loses focus.
+
+4. **Window Events**:
+   - `load`: Occurs when a page has finished loading.
+   - `unload`: Occurs when a page is about to be unloaded.
+   - `resize`: Occurs when the browser window is resized.
+   - `scroll`: Occurs when the document is scrolled.
+
+5. **Drag and Drop Events**:
+   - `dragstart`: Occurs when an element is dragged.
+   - `dragend`: Occurs when the drag operation is finished.
+   - `dragenter`, `dragover`, and `dragleave`: Occur when an element is dragged over another element.
+   - `drop`: Occurs when an element is dropped into another element.
+
+6. **Touch Events** (for mobile and touch-enabled devices):
+   - `touchstart`, `touchmove`, `touchend`: Occur when a touch event begins, moves, and ends.
+   - `touchcancel`: Occurs when a touch event is canceled.
+
+7. **Custom Events**:
+   - You can create and dispatch custom events using the `CustomEvent` constructor.
+
+8. **Focus Events**:
+   - `focusin` and `focusout`: These events bubble and are related to focusing and blurring.
+
+9. **Clipboard Events**:
+   - `copy`, `cut`, and `paste`: Occur when users interact with the clipboard.
+
+10. **Media Events**:
+    - Events related to audio and video elements, such as `play`, `pause`, `ended`, etc.
+
+11. **Animation and Transition Events**:
+    - Events triggered when CSS animations and transitions start, end, or repeat.
+
+12. **WebSocket Events**:
+    - Events related to WebSocket connections, such as `open`, `close`, and `message`.
+
+13. **Server-Sent Events (SSE) Events**:
+    - Events related to server-sent events, such as `message` and `error`.
+
+These are some of the most commonly used event types in JavaScript. Each event type has specific properties and methods associated with it that you can use to handle and manipulate events in your web applications.

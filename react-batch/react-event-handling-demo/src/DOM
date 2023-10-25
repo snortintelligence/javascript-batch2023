@@ -1,0 +1,41 @@
+Virtual DOM (VDOM) is a technique in React that updates a component when its state variable changes. 
+
+But what is a state? 
+A state is like a private variable for a component. Each component can have its own state.
+React state is essential for building dynamic and interactive user interfaces. 
+State is mutable, meaning you can change its value. When the state changes, React will automatically re-render the component to reflect the updated state.
+
+For example, if you have a component called `ProductDetails.js`, and you use it twice in your app, each instance of `ProductDetails` can have its own separate state. This means they can hold different information or data independently from each other.
+
+
+
+const products = [
+    {
+        "id": 1,
+        "name": "Smartphone",
+        "brand": "Apple",
+        "category": "Electronics",
+        "inStockQuantity": 20,
+        "coverImg": "iphone.jpg",
+        "descriptions": "The latest iPhone model with an incredible camera and performance."
+    },
+    {
+        "id": 2,
+        "name": "Laptop",
+        "brand": "Dell",
+        "category": "Electronics",
+        "inStockQuantity": 0,
+        "coverImg": "laptop.jpg",
+        "descriptions": "A high-performance laptop for professionals and gamers."
+    }
+]
+
+Product.js: Product component is executed! ---> render once and It has no state
+
+ProductDetails.js ProductDetails component is executed! ---> It has state & it changed here so rendering this componnet again and again
+Button.js Button component is executed!
+Button.js Button component is executed!
+
+ProductDetails.js ProductDetails component is executed!
+Button.js Button component is executed!
+Button.js Button component is executed!
