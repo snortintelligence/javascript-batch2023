@@ -1,0 +1,2 @@
+Side effects can be everyting that might be happening in your application which is not realted to ui rending like useState() hook does.  
+Side effects are typically related to tasks like data fetching | api call | sending http request to the server, DOM manipulation, and other asynchronous (file reading | timer events) operations. 
